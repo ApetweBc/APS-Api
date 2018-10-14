@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+        <h1>App growth Network</h1>
+        <input type="text" id="name" value="type search">
+            <button id="submit" onclick="getUsers()">Submit</button>
+            <div class="output-styling" id="output">
+                     
+            </div>     
+        
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.searchman.io/v1/android/us/search/rank?q=bingo&apiKey=1d99d7c8c20d06fbde52ed504c601d96",
+  "method": "GET",
+  "headers": {
+    "Authorization": "Bearer 1d99d7c8c20d06fbde52ed504c601d96",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "6972144e-9cd4-4f48-a548-c72cb28f9ddc"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  return response;
+  var display = document.getElementById('output');
+  display.innerHTML = response;
+  console.log(response);
+  
+});
+        
+    </script>
+</body>
+</html>
